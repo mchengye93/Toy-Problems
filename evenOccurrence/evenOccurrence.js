@@ -12,4 +12,19 @@
 
 var evenOccurrence = function(arr) {
   // Your code here.
+  var objCount = {};
+
+  for (var i= 0; i < arr.length; i++) {
+    if(objCount[arr[i]] === undefined) {
+      objCount[arr[i]] = 1;
+    } else {
+      objCount[arr[i]] = objCount[arr[i]] + 1;
+    }
+  }
+
+  for (var key in objCount) {
+    if (objCount[key] % 2 === 0) {
+      return key;
+    }
+  }
 };
