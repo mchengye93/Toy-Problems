@@ -7,5 +7,18 @@
  */
 
 var firstNonRepeatedCharacter = function(string) {
-  // TODO: your solution here
+  var uniqueObj = {};
+  for (var i= 0; i < string.length; i++) {
+    if (uniqueObj[string[i]] === undefined) {
+      uniqueObj[string[i]] = 1;
+    }
+    else {
+      uniqueObj[string[i]] = 1 + uniqueObj[string[i]] ;
+    }
+  }
+  for (var key in uniqueObj) {
+    if (uniqueObj[key]=== 1) {
+      return key;
+    }
+  }
 };
