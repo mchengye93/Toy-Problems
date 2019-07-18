@@ -13,5 +13,30 @@
 
 
 var commonCharacters = function(string1, string2) {
-  // TODO: Your code here!
+  var charCount = {};
+  var commonCharObj = {};
+
+  
+    for (var i = 0; i < string1.length; i++) {
+      if (charCount[string1[i]] === undefined) {
+        charCount[string1[i]] = 1;
+      }
+    }
+    for (var i =0; i < string2.length;i++) {
+      if (charCount[string2[i]] !==undefined) {
+        commonCharObj[string2[i]] = 1;
+      }
+    }
+
+    var commonUniqueChar = [];
+
+    for (var i = 0; i < string1.length; i++) {
+      if (commonCharObj[string1[i]]!== undefined) {
+        commonUniqueChar.push(string1[i]);
+        delete commonCharObj[string1[i]];
+      }
+    }
+    return commonUniqueChar.join('');
+  
+  
 };
