@@ -37,4 +37,14 @@ var Node = function(value) {
 
 var hasCycle = function(linkedList) {
   // TODO: implement me!
+  var slow = linkedList;
+  var fast = linkedList;
+  while (slow.next!== null) {
+    fast = fast.next.next;
+    slow = slow.next;
+    if (slow.value === fast.value) {
+      return true;
+    }
+  }
+  return false;
 };
