@@ -26,8 +26,14 @@ var LinkedList = function() {
 
 //write methods here!
 
-LinkedList.prototype.addToTail = function(
-) {
+LinkedList.prototype.addToTail = function(value) {
+  var newTailNode = this.makeNode(value);
+
+  if (this.tail !== null) {
+    var prevTail = this.tail;
+    this.tail = newTailNode;
+    prevTail.next = newTailNode;
+  }
 };
 
 LinkedList.prototype.removeHead = function() {
