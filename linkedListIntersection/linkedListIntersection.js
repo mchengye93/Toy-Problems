@@ -57,7 +57,7 @@ function linkedListIntersection(list1, list2) {
       return long; 
     }
 
-    // otherwise... 
+  
     long = long.next; 
     short = short.next;
   }
@@ -65,3 +65,15 @@ function linkedListIntersection(list1, list2) {
   return null;
 }
 
+function getLinkedListLength(linkedList) {
+  var count = 0;
+  if (linkedList.head!==null) {
+    var node = linkedList.head;
+    while (node !== null){
+      node = node.next;
+      count++;
+    }
+    return count;
+  }
+  
+}
