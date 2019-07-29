@@ -20,7 +20,8 @@
 
 
 var LinkedList = function() {
-  //fill me in!
+  this.head = null;
+  this.tail = null;
 };
 
 //write methods here!
