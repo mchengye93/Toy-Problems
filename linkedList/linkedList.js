@@ -31,6 +31,14 @@ LinkedList.prototype.addToTail = function(
 };
 
 LinkedList.prototype.removeHead = function() {
+  var node = this.head;
+
+  if (node.next !== null) {
+    this.head = node.next;
+  } else {
+    this.head = null;
+    this.tail = null;
+  }
 };
 
 LinkedList.prototype.contains = function(target) {
