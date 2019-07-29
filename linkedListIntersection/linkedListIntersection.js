@@ -38,6 +38,30 @@ function Node (val) {
 
 
 function linkedListIntersection(list1, list2) {
-  // TODO: Implement this function!
+  const list1Length = getLinkedListLength(list1);
+  const list2Length = getLinkedListLength(list2);
+        
+  let diff = Math.abs(list2Length - list1Length);
+  let long = list1Length >= list2Length ? list1 : list2;
+  let short = list1Length >= list2Length ? list2 : list1;
+  
+  while(long && short) {
+
+    if(diff > 0) { 
+      long = long.next; 
+      diff--; 
+      continue;
+    }
+
+    if(long === short) { 
+      return long; 
+    }
+
+    // otherwise... 
+    long = long.next; 
+    short = short.next;
+  }
+  
+  return null;
 }
 
