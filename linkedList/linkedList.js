@@ -31,14 +31,21 @@ LinkedList.prototype.addToTail = function(
 };
 
 LinkedList.prototype.removeHead = function() {
-  var node = this.head;
-
-  if (node.next !== null) {
-    this.head = node.next;
-  } else {
+  
+  var currentHead = this.head;
+  if (this.head === this.tail) {
     this.head = null;
     this.tail = null;
+  } else {
+    this.head = this.head.next;
   }
+  
+  if (currentHead !== null) {
+    return currentHead.value;
+  } else {
+    return null;
+  }
+  
 };
 
 LinkedList.prototype.contains = function(target) {
