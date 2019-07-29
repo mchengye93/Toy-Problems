@@ -33,8 +33,14 @@ LinkedList.prototype.addToTail = function(
 LinkedList.prototype.removeHead = function() {
 };
 
-LinkedList.prototype.contains = function(
-) {
+LinkedList.prototype.contains = function(target) {
+    var node = this.head;
+    while (node !== null) {
+      if (node.value === target) {
+        return true;
+      }
+    }
+    return false;
 };
 
 LinkedList.prototype.makeNode = function(value) {
